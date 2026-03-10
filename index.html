@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GamerTech - Peças para PCs Gamer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="topbar">
+    <div class="container topbar__content">
+      <h1 class="logo">GamerTech</h1>
+
+      <div class="search">
+        <input id="searchInput" type="search" placeholder="Buscar produto..." />
+      </div>
+
+      <button id="openCartBtn" class="cart-btn" aria-label="Abrir carrinho">
+        🛒 <span id="cartCount" class="badge">0</span>
+      </button>
+    </div>
+
+    <nav class="menu">
+      <a href="#produtos">Produtos</a>
+      <a href="#sobre">Sobre Nós</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main class="container" id="produtos" tabindex="-1">
+    <h2 class="section-title">Nossos Produtos</h2>
+
+    <!-- Filtros simples -->
+    <div class="filters">
+      <button class="filter-btn is-active" data-filter="todos">Todos</button>
+      <button class="filter-btn" data-filter="Processadores">Processadores</button>
+      <button class="filter-btn" data-filter="Placas de Vídeo">Placas de Vídeo</button>
+      <button class="filter-btn" data-filter="Memória RAM">Memória RAM</button>
+    </div>
+
+    <!-- Grade onde os produtos serão renderizados via JS -->
+    <section id="productsGrid" class="grid"></section>
+  </main>
+
+  <!-- Carrinho (painel lateral) -->
+  <aside id="cartPanel" class="cart-panel" aria-hidden="true" aria-labelledby="cartTitle">
+    <div class="cart-panel__header">
+      <h2 id="cartTitle">Seu Carrinho</h2>
+      <button id="closeCartBtn" class="icon-btn" aria-label="Fechar carrinho">✖</button>
+    </div>
+
+    <div id="cartItems" class="cart-items"></div>
+
+    <div class="cart-panel__footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <strong id="cartTotal">R$ 0,00</strong>
+      </div>
+      <button id="checkoutBtn" class="btn btn-primary">Finalizar Compra</button>
+      <button id="clearCartBtn" class="btn btn-danger">Esvaziar Carrinho</button>
+    </div>
+  </aside>
+
+  <!-- Sobre e Contato -->
+  <section id="sobre" class="container">
+    <h2 class="section-title">Sobre Nós</h2>
+    <p>Bem-vindo à GamerTech — loja exemplo para fins de estudo e prática de programação.</p>
+  </section>
+
+  <section id="contato" class="container">
+    <h2 class="section-title">Contato</h2>
+    <p>E-mail: pedroyudimatsuo@gmail.com </p>
+  </section>
+
+  <!-- Backdrop do carrinho -->
+  <div id="backdrop" class="backdrop" hidden></div>
+
+  <footer class="footer">
+    <div class="container">
+      <small>© 2026 GamerTech. Todos os direitos reservados.</small>
+    </div>
+  </footer>
+
+  <!-- Importante: carregar o JavaScript no final -->
+  <script src="script.js"></script>
+</body>
+</html>
